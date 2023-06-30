@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:4444',
+  baseURL: process.env.REACT_APP_API_URL,
 });
+
+// http://localhost:4444
 
 // когда любой заропс просиходит то всегда проверяй есть ли что-то в Хранилище (LocalStorage)
 instance.interceptors.request.use((config) => {
